@@ -60,10 +60,10 @@ class Gallery(ctk.CTkScrollableFrame):
         self.grid_frame = ctk.CTkFrame(self, fg_color="transparent")
         self.grid_frame.pack(fill="both", expand=True, padx=8, pady=8)
 
-        # Calculate columns based on available width
-        available_width = self.winfo_width() or 800
-        card_width = ImageCard.CARD_SIZE + 12
-        cols = max(1, available_width // card_width)
+        # Force exactly 6 columns and make them fill the full width
+        cols = 6
+        for i in range(cols):
+            self.grid_frame.columnconfigure(i, weight=1)
 
         # Create cards in grid
         for idx, ss in enumerate(screenshots):
@@ -76,7 +76,8 @@ class Gallery(ctk.CTkScrollableFrame):
                 on_click=self.on_card_click,
                 on_select=self._on_card_select,
             )
-            card.grid(row=row, column=col, padx=6, pady=6, sticky="nw")
+            # Use sticky="nsew" to fill the column width
+            card.grid(row=row, column=col, padx=4, pady=4, sticky="nsew")
             self.cards.append(card)
 
     def _clear_cards(self):

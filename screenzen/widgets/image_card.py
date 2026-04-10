@@ -15,8 +15,8 @@ class ImageCard(ctk.CTkFrame):
     OCR status indicator, and selection checkbox.
     """
 
-    CARD_SIZE = 180
-    THUMB_SIZE = 150
+    CARD_SIZE = 140
+    THUMB_SIZE = 110
 
     def __init__(self, parent, screenshot_data: Dict,
                  on_click: Callable[[Dict], None] = None,
@@ -28,7 +28,6 @@ class ImageCard(ctk.CTkFrame):
             corner_radius=12,
             border_width=1,
             border_color="#313244",
-            width=self.CARD_SIZE,
             height=self.CARD_SIZE + 50,
             **kwargs
         )

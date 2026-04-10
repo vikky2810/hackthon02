@@ -80,34 +80,32 @@ Your desktop is buried under **1000+ screenshots** and you can never find *"that
 1. **Python 3.9+** — [Download here](https://www.python.org/downloads/)
 2. **Tesseract OCR** — [Download here](https://github.com/UB-Mannheim/tesseract/wiki)
    - During installation, note the install path (default: `C:\Program Files\Tesseract-OCR`)
-   - Add Tesseract to your system PATH, or the app will auto-detect common install locations
+   - Add Tesseract to your system PATH, or the app will auto-detect common paths
 
-### Quick Setup (Recommended)
-
-Double-click `setup.bat` — it will:
-1. Verify Python and Tesseract installations
-2. Clean any legacy files from previous versions
-3. Create and activate a virtual environment
-4. Install all dependencies from `requirements.txt`
-5. Create the required `data/` directories
-6. Run a quick test suite
-7. Optionally launch the app immediately
-
-### Manual Setup
+### Setup
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/yourusername/screenzen.git
 cd screenzen
 
-# 2. Create and activate a virtual environment
+# 2. Create a virtual environment (recommended)
 python -m venv venv
+
+# 3. Activate the virtual environment
+# Windows:
 venv\Scripts\activate
+# Windows (Git Bash / Bash):
+source venv/Scripts/activate
+# Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
 
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Run the app
+### Running the App
+
+```bash
 python main.py
 ```
 

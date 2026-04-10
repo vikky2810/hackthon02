@@ -25,8 +25,8 @@ class ScreenZenApp(ctk.CTk):
     """Main ScreenZen application window."""
 
     APP_TITLE = "ScreenZen — Screenshot Super-Organizer"
-    DEFAULT_WIDTH = 1200
-    DEFAULT_HEIGHT = 750
+    DEFAULT_WIDTH = 1300
+    DEFAULT_HEIGHT = 800
 
     def __init__(self):
         super().__init__()
@@ -34,7 +34,7 @@ class ScreenZenApp(ctk.CTk):
         # ── Window setup ──
         self.title(self.APP_TITLE)
         self.geometry(f"{self.DEFAULT_WIDTH}x{self.DEFAULT_HEIGHT}")
-        self.minsize(900, 550)
+        self.minsize(1200, 600)
 
         # Dark theme
         ctk.set_appearance_mode("dark")
